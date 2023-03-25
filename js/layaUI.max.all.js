@@ -1,4 +1,31 @@
-123
+var CLASS$=Laya.class;
+var STATICATTR$=Laya.static;
+var View=laya.ui.View;
+var Dialog=laya.ui.Dialog;
+var AddFriendTipUI=(function(_super){
+		function AddFriendTipUI(){
+			
+		    this.bg_img=null;
+		    this.title_txt=null;
+		    this.content_input=null;
+		    this.sure_btn=null;
+		    this.cancel_btn=null;
+		    this.close_btn=null;
+		    this.paste_txt=null;
+
+			AddFriendTipUI.__super.call(this);
+		}
+
+		CLASS$(AddFriendTipUI,'ui.AddFriendTipUI',_super);
+		var __proto__=AddFriendTipUI.prototype;
+		__proto__.createChildren=function(){
+		    			View.regComponent("Text",laya.display.Text);
+
+			laya.ui.Component.prototype.createChildren.call(this);
+			this.createView(AddFriendTipUI.uiView);
+
+		}
+
 		AddFriendTipUI.uiView={"type":"View","props":{"width":434,"height":240},"child":[{"type":"Image","props":{"y":17,"x":3,"var":"bg_img","skin":"gameres/png/playInfo_bg.png","sizeGrid":"61,32,23,27","name":"bg_img","height":200},"child":[{"type":"Text","props":{"y":14,"x":4,"width":387,"var":"title_txt","text":"添加好友","name":"title_txt","height":24,"fontSize":24,"color":"#f9f6f6","align":"center"}},{"type":"TextInput","props":{"y":70,"x":32,"width":304,"var":"content_input","skin":"gameres/ui/f_bottomFrame.png","prompt":"请输入好友昵称","name":"content_input","height":31,"color":"#ffffff"}},{"type":"Button","props":{"y":133,"x":46,"var":"sure_btn","stateNum":2,"skin":"gameres/ui/f_sure.png","name":"sure_btn"}},{"type":"Button","props":{"y":133,"x":203,"var":"cancel_btn","stateNum":2,"skin":"gameres/ui/cancel.png","name":"cancel_btn"}},{"type":"Button","props":{"y":-24,"x":371,"var":"close_btn","stateNum":2,"skin":"gameres/ui/but_close.png","name":"close_btn"}},{"type":"Text","props":{"y":78,"x":294,"var":"paste_txt","text":"粘贴","name":"paste_txt","fontSize":16}}]}]};
 		return AddFriendTipUI;
 	})(View);
